@@ -1,0 +1,15 @@
+version: '3'
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/jenkins_home:/var/jenkins_home 
+       # in case destaroy the container it will look for 
+       # this file and map the containt to the containner
+    networks:
+      - net 
+networks:
+  net:
