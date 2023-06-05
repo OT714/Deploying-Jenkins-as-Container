@@ -1,0 +1,46 @@
+Deploying Jenkins as a Container in Azure using Azure Container Instances
+Introduction
+This documentation provides a step-by-step guide to deploy Jenkins as a container in Azure using Azure Container Instances (ACI) and Azure Container Registry (ACR). By containerizing Jenkins and utilizing ACI and ACR, we can take advantage of the scalability, flexibility, and ease of management provided by Azure's container services.
+
+Prerequisites
+Before proceeding with the deployment, ensure the following prerequisites are met:
+
+An active Azure subscription.
+Access to Azure Portal with appropriate permissions.
+Basic understanding of Jenkins and its configuration.
+Familiarity with Docker and containerization concepts.
+Deployment Steps
+Step 1: Set up Azure Container Registry (ACR)
+Log in to the Azure Portal.
+Create an Azure Container Registry in the desired Azure region.
+Take note of the ACR login server, which will be used in later steps.
+Generate an access key for the ACR and store it securely.
+Step 2: Build and Push the Jenkins Docker Image to ACR
+Set up a Docker environment on your local machine or a dedicated build server.
+Create a Dockerfile to define the Jenkins image, plugins, and configurations.
+Build the Docker image using the Dockerfile.
+Tag the Docker image with the ACR login server and repository name.
+Log in to the ACR using the access key generated in Step 1.
+Push the Docker image to the ACR repository.
+Step 3: Deploy Jenkins as a Container using Azure Container Instances (ACI)
+Log in to the Azure Portal.
+Create a new container instance in the desired Azure region.
+Specify the following details for the container instance:
+Image Source: Select "Azure Container Registry."
+Image and Tag: Provide the ACR repository name and tag for the Jenkins image.
+Resource Group: Select the appropriate resource group.
+Networking: Configure the required networking settings.
+CPU and Memory: Specify the desired CPU and memory resources.
+Review the deployment configuration and click "Create" to provision the container instance.
+Step 4: Access Jenkins Web Interface and Perform Initial Setup
+Once the container instance is deployed, navigate to the Azure Portal.
+Find the public IP or DNS address assigned to the container instance.
+Open a web browser and enter the IP or DNS address, followed by the Jenkins default port (usually 8080).
+Follow the on-screen instructions to complete the initial Jenkins setup, including creating an admin user and installing plugins.
+Conclusion
+By following these steps, you can successfully deploy Jenkins as a container in Azure using Azure Container Instances (ACI) and Azure Container Registry (ACR). This containerized deployment provides scalability, flexibility, and ease of management for our Jenkins environment. Make sure to update this Confluence page with any changes or additional considerations to keep the documentation up to date.
+
+References
+Azure Container Instances Documentation
+Azure Container Registry Documentation
+Jenkins Documentation
