@@ -1,3 +1,13 @@
 ### Create a docker image and push in azure registry
 az acr build --image <>image name> --registry <acr> --file Dockerfile .
 az acr build --image jenkins-in-docker:v1 --registry omerhub --file Dockerfile .
+
+
+# List container groups.
+az container list [--resource-group]
+az container list --resource-group rg-jenkins-docker-linuxvm-eus2-dev-01
+
+# To exec inside a container.
+az container exec --exec-command "/bin/bash" --name mynginx --resource-group MyResourceGroup
+
+az container exec --exec-command "/bin/bash" --name jk-dk-instance --resource-group rg-jenkins-docker-linuxvm-eus2-dev-01
