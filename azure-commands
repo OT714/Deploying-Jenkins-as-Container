@@ -1,0 +1,3 @@
+### Create a docker image and push in azure registry
+az acr build --image <>image name> --registry <acr> --file Dockerfile .
+az acr build --image jenkins-in-docker:v1 --registry omerhub --file Dockerfile .
